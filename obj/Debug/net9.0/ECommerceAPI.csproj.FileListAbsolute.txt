@@ -165,3 +165,4 @@ C:\Users\2391440\OneDrive - Cognizant\Desktop\Work\Project\ECommerceAPI\bin\Debu
 C:\Users\2391440\OneDrive - Cognizant\Desktop\Work\Project\ECommerceAPI\bin\Debug\net9.0\Azure.Storage.Blobs.dll
 C:\Users\2391440\OneDrive - Cognizant\Desktop\Work\Project\ECommerceAPI\bin\Debug\net9.0\Azure.Storage.Common.dll
 C:\Users\2391440\OneDrive - Cognizant\Desktop\Work\Project\ECommerceAPI\bin\Debug\net9.0\System.IO.Hashing.dll
+C:\Users\2391440\OneDrive - Cognizant\Desktop\Work\Project\ECommerceAPI\obj\Debug\net9.0\ECommerceAPI.sourcelink.json

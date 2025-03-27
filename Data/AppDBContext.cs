@@ -11,6 +11,9 @@ namespace ProductAPI.Data
         public DbSet<Ticket> Tickets {get; set;}
         public DbSet<UserProfile> UserProfiles {get; set;}
         public DbSet<Wishlist> Wishlists {get; set;}
+        public DbSet<Order> Orders {get; set;}
+        public DbSet<OrderItem> OrderItems {get; set;}
+
 
     
 
