@@ -21,6 +21,7 @@ namespace ProductAPI.Controllers
         // POST /api/paypal/create-order
         // Creates an order from the user's cart, sets status = "Awaiting Payment"
         // DOES NOT remove cart items yet
+        /*
         [HttpPost("create-order")]
         [Authorize]
         public async Task<IActionResult> CreatePayPalOrder()
@@ -59,6 +60,14 @@ namespace ProductAPI.Controllers
 
             // Return the new order ID to the client
             return Ok(order.Id);
+        }
+        */
+        [HttpPost("create-order")]
+        [Authorize]
+        public async Task<IActionResult> CreatePayPalOrder()
+        {
+            return Ok(1);
+
         }
     }
 }
