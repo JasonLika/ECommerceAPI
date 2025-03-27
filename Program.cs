@@ -13,7 +13,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowBlazorClient", policy =>
     {
-        policy.WithOrigins("https://localhost:7001")
+        policy.WithOrigins("https://jasonlikafewebapp-g9acexgwaha5a2e4.eastus2-01.azurewebsites.net/")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
