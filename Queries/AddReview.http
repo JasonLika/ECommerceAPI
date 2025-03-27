@@ -1,0 +1,9 @@
+POST http://localhost:5236/api/reviews
+Content-Type: application/json
+
+{
+    "title": "Elegant",
+    "description": "Nice phone and good quality",
+    "rating": 5,
+    "productId": 1
+}

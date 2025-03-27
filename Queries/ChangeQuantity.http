@@ -1,0 +1,7 @@
+PUT http://localhost:5236/api/carts
+Content-Type: application/json
+
+    {
+    "id": 14,
+    "quantity": 8
+}

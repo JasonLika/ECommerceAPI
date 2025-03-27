@@ -1,0 +1,10 @@
+POST http://localhost:5236/api/products
+Content-Type: application/json
+
+{
+    "name": "Iphone",
+    "description": "Good phone. Nice",
+    "price": 799.99,
+    "stock": 230,
+    "size": "S"
+}
