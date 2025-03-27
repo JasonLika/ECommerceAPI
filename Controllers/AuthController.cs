@@ -31,7 +31,7 @@ namespace ProductAPI.Controllers
         {
             var clientId = _config["GitHub:ClientId"];
             // Use the callback endpoint that matches your routing and GitHub settings.
-            var redirectUri = Uri.EscapeDataString("https://jasonlikaapiwebapp-hxf4amd6fsa4fab8.eastus2-01.azurewebsites.net//auth/callback");
+            var redirectUri = Uri.EscapeDataString("https://jasonlikaapiwebapp-hxf4amd6fsa4fab8.eastus2-01.azurewebsites.net/auth/callback");
             var state = Guid.NewGuid().ToString(); // You can store this value for additional security.
             var authorizationUrl = $"https://github.com/login/oauth/authorize?client_id={clientId}&redirect_uri={redirectUri}&state={state}";
             return Redirect(authorizationUrl);
@@ -105,7 +105,7 @@ namespace ProductAPI.Controllers
     };
 
             var jwtToken = GenerateJwtToken(claims);
-            var redirectUrl = $"https://jasonlikafewebapp-g9acexgwaha5a2e4.eastus2-01.azurewebsites.net//tokenreceiver?token={jwtToken}&newUser={isNewUser}";
+            var redirectUrl = $"https://jasonlikafewebapp-g9acexgwaha5a2e4.eastus2-01.azurewebsites.net/tokenreceiver?token={jwtToken}&newUser={isNewUser}";
             return Redirect(redirectUrl);
         }
 
