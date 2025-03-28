@@ -17,7 +17,7 @@ namespace ProductAPI.Controllers
         {
             _context = context;
         }
-
+        /*
         // Convert cart items into an order
         [HttpPost("checkout")]
         [Authorize]
@@ -136,6 +136,6 @@ namespace ProductAPI.Controllers
             await _context.SaveChangesAsync();
             return Ok($"Order {orderId} marked as Paid. Cart cleared, stock reduced.");
         }
-
+        */
     }
 }

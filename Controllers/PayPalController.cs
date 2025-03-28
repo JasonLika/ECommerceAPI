@@ -26,6 +26,8 @@ namespace ProductAPI.Controllers
         [Authorize]
         public async Task<IActionResult> CreatePayPalOrder()
         {
+            //private UserProfile user;
+            //user = await CartService.GetCurrentUserProfileAsync();
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (string.IsNullOrEmpty(userId))
                 return Unauthorized("User not authenticated.");
@@ -64,9 +66,42 @@ namespace ProductAPI.Controllers
         */
         [HttpPost("create-order")]
         [Authorize]
-        public async Task<IActionResult> CreatePayPalOrder()
+        public async Task<IActionResult> CreatePayPalOrder([FromQuery] int userId)
         {
-            return Ok(1);
+            //return Ok(1);
+
+             // Get cart items
+            var cartItems = await _context.Carts
+                .Where(ci => ci.UserId == userId)
+                .ToListAsync();
+
+            /*
+            if (cartItems.Count == 0)
+            {
+                return BadRequest("Cart is empty. Cannot create an order.");
+            }
+            */
+
+            // Create a new order with status "Awaiting Payment"
+            var order = new Order
+            {
+                UserId = userId,
+                Status = "Awaiting Payment",
+                CreatedAt = DateTime.UtcNow,
+                // Build order items from the cart
+                OrderItems = cartItems.Select(ci => new OrderItem
+                {
+                    ProductId = ci.ProductId,
+                    Quantity = ci.Quantity,
+                    UnitPrice = ci.Price
+                }).ToList()
+            };
+
+            _context.Orders.Add(order);
+            await _context.SaveChangesAsync();
+
+            // Return the new order ID to the client
+            return Ok(order.Id);
 
         }
     }
