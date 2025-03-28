@@ -17,6 +17,15 @@ namespace ProductAPI.Controllers
         {
             _context = context;
         }
+
+        [HttpPost]
+        public async Task<IActionResult> AddToOrder(Order orderItem)
+        {
+            _context.Orders.Add(orderItem);
+            await _context.SaveChangesAsync();
+            return Ok(orderItem.Id);
+        }
+
         /*
         // Convert cart items into an order
         [HttpPost("checkout")]
