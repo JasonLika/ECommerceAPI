@@ -66,7 +66,7 @@ namespace ProductAPI.Controllers
         */
         [HttpPost("create-order")]
         [Authorize]
-        public async Task<IActionResult> CreatePayPalOrder([FromQuery] int userId)
+        public async Task<IActionResult> CreatePayPalOrder()
         {
             return Ok(1);
         }
