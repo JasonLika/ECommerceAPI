@@ -26,6 +26,13 @@ namespace ProductAPI.Controllers
             return Ok(orderItem.Id);
         }
 
+         [HttpGet]
+        public async Task<ActionResult<IEnumerable<Order>>> GetOrders()
+        {
+            var orders = await _context.Orders.ToListAsync();
+            return Ok(orders);
+        }
+
         /*
         // Convert cart items into an order
         [HttpPost("checkout")]
