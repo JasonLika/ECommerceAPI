@@ -61,6 +61,20 @@ namespace ProductAPI.Controllers{
             return NoContent();
         }
 
+    [HttpDelete("clear")]
+    public async Task<ActionResult> ClearCart()
+    {
+        // Fetch all cart items
+        var cartItems = await _context.Carts.FindAsync();
+
+        // Remove all cart items
+        _context.Carts.RemoveRange(cartItems);
+
+        // Save changes to the database
+        await _context.SaveChangesAsync();
+
+        return NoContent();
+    }
         
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateCart(int id, Cart updatedCartItem)
