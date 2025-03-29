@@ -65,8 +65,7 @@ namespace ProductAPI.Controllers{
     public async Task<ActionResult> ClearCart()
     {
         // Fetch all cart items
-        var cartItems = await _context.Carts.FindAsync();
-
+        var cartItems = await _context.Carts.ToListAsync();
         // Remove all cart items
         _context.Carts.RemoveRange(cartItems);
 
