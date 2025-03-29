@@ -73,7 +73,7 @@ namespace ProductAPI.Controllers{
         // Save changes to the database
         await _context.SaveChangesAsync();
 
-        return NoContent();
+        return Ok("Cart cleared successfully.");
     }
         
         [HttpPut("{id}")]
